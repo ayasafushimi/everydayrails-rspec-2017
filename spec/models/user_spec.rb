@@ -1,32 +1,30 @@
 require 'rails_helper'
-include ActiveJob::TestHelper
 
 RSpec.describe User, type: :model do
+  # 有効なファクトリを持つこと
+  it "has a valid factory" do
+    expect(FactoryBot.build(:user)).to be_valid
+  end
   # 姓、名、メール、パスワードがあれば有効な状態であること
   it "is valid with a first name, last name, email, and password" do
-    user = User.new(
-      first_name: "Aaron",
-      last_name: "Summer",
-      email: "tester@example.com",
-      password: "dottele-nouveau-pavilion-tights-furze",
-    )
+    user = FactoryBot.build(:user)
     expect(user).to be_valid
   end
   # 名がなければ無効な状態であること
   it "is invalid without a first name" do
-    user = User.new(first_name: nil)
+    user = FactoryBot.build(:user, first_name: nil)
     user.valid?
     expect(user.errors[:first_name]).to include("can't be blank")
   end
   # 姓がなければ無効な状態であること
   it "is invalid without a last name" do
-    user = User.new(last_name: nil)
+    user = FactoryBot.build(:user, last_name: nil)
     user.valid?
     expect(user.errors[:last_name]).to include("can't be blank")
   end
   # メールアドレスがなければ無効な状態であること
   it "is invalid without an email address" do
-    user = User.new(email: nil)
+    user = FactoryBot.build(:user, email: nil)
     user.valid?
     expect(user.errors[:email]).to include("can't be blank")
   end
@@ -49,11 +47,7 @@ RSpec.describe User, type: :model do
   end
   # ユーザーのフルネームを文字列として返すこと
   it "returns a user's full name as a string" do
-    user = User.new(
-      first_name: "John",
-      last_name: "Doe",
-      email: "johndoe@example.com",
-    )
+    user = FactoryBot.build(:user, first_name: "John", last_name: "Doe")
     expect(user.name).to eq "John Doe"
   end
 end
