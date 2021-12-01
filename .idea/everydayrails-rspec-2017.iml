@@ -59,6 +59,8 @@
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.4.4, rbenv: 2.6.7) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.7.1, rbenv: 2.6.7) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, rbenv: 2.6.7) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="factory_bot (v4.10.0, rbenv: 2.6.7) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="factory_bot_rails (v4.10.0, rbenv: 2.6.7) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faker (v1.7.3, rbenv: 2.6.7) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.18, rbenv: 2.6.7) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="geocoder (v1.4.9, rbenv: 2.6.7) [gem]" level="application" />
