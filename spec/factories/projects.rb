@@ -7,7 +7,7 @@ FactoryBot.define do
 
     # メモ付きのプロジェクト
     trait :with_notes do
-      after(:create) {|project| create_list(:note, 5, project: project)}
+      after(:create) {|project| create_list(:i, 5, project: project)}
     end
 
     # 昨日が締め切りのプロジェクト
