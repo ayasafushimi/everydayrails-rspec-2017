@@ -23,6 +23,10 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
+group :test do
+  gem 'launchy', '~> 2.4.3'
+end
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
