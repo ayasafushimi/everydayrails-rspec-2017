@@ -7,6 +7,7 @@ RSpec.feature "Projects", type: :feature do
 
     visit root_path
     click_link "Sign in"
+    save_and_open_page
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Log in"
@@ -21,12 +22,5 @@ RSpec.feature "Projects", type: :feature do
       expect(page).to have_content "Test Project"
       expect(page).to have_content "Owner: #{user.name}"
     }.to change(user.projects, :count).by(1)
-  end
-
-  scenario "guest adds a project" do
-    visit projects_path
-    # デバッグ用メソッド。スペックが成功するようになったら削除の必要あり。
-    save_and_open_screenshot
-    click_link "New Project"
   end
 end
